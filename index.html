@@ -1,0 +1,377 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Inara Isani</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: professional single column; three colors only (navy, teal, off-white) with teal tints for fills; navy band carries the thesis */
+:root{
+  --bg:#FFF5EE; --surface:#FFFFFF; --ink:#3A2622; --muted:#7A625B; --line:#F0DDD2;
+  --teal:#23786A; --teal-soft:#DDEFEA; --rose:#D9466D; --rose-soft:#FCE3EA;
+  --plum:#6B57A5; --band:#EEE8F8; --on-band:#3A2622; --peach:#FFDCCB; --sun-soft:#FFE8C7;
+  --display:"Nunito", "Avenir Next Rounded", system-ui, sans-serif;
+  --body:"Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#1E1614; --surface:#2A201D; --ink:#F7EAE2; --muted:#C2A99F; --line:#3E2F2A;
+  --teal:#6FCBB5; --teal-soft:#1F332E; --rose:#F27496; --rose-soft:#3F2129;
+  --plum:#CBBAF2; --band:#2E2640; --on-band:#F7EAE2; --peach:#4A2E25; --sun-soft:#45331B; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#1E1614; --surface:#2A201D; --ink:#F7EAE2; --muted:#C2A99F; --line:#3E2F2A;
+  --teal:#6FCBB5; --teal-soft:#1F332E; --rose:#F27496; --rose-soft:#3F2129;
+  --plum:#CBBAF2; --band:#2E2640; --on-band:#F7EAE2; --peach:#4A2E25; --sun-soft:#45331B; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:10px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+.eyebrow{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--teal)}
+.ph{font-size:12px;font-weight:700;color:var(--teal);background:var(--surface);border:1.5px dashed var(--teal);padding:3px 9px;border-radius:999px}
+
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:24px;border-bottom:1px solid var(--line)}
+nav .name{font-family:var(--display);font-weight:900;font-size:21px;text-decoration:none}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:600;flex-wrap:wrap}
+nav ul a{text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px}
+nav ul a:hover{color:var(--ink);background:var(--surface)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;padding-block:56px 72px}
+.hero h1{font-size:clamp(36px,5vw,56px);font-weight:900;letter-spacing:-.015em;margin-top:14px}
+.hero h1 span{color:var(--rose)}
+.hero p.lede{font-size:19px;color:var(--muted);max-width:52ch;margin:20px 0 28px}
+.focus{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.focus span{font-family:var(--display);font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;background:var(--teal-soft);color:var(--teal)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:800 16px var(--display);padding:12px 24px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+
+.portrait{position:relative;justify-self:center;width:100%;max-width:360px}
+.arch{aspect-ratio:4/5;max-width:100%;border-radius:180px 180px 24px 24px;background:var(--peach);display:grid;place-items:center;overflow:hidden}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.thumb img,.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.case .thumb{overflow:hidden}
+.case .thumb.shot img{object-position:0 0}
+.case .thumb.slide{background:#4A1E3E}
+.case .thumb.slide img{object-fit:contain}
+.case .thumb.trustArt{background:var(--band);color:var(--plum);padding:6px}
+.trustArt svg{width:100%;height:100%;display:block}
+.statThumb{padding:22px;text-align:center;color:var(--ink)}
+.statThumb b{display:block;font-family:var(--display);font-weight:900;font-size:44px;line-height:1;color:var(--rose)}
+.statThumb span{display:block;margin-top:8px;font-size:13.5px;font-weight:700;line-height:1.4;color:var(--muted)}
+.sticker{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:9px 14px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.sticker i{width:8px;height:8px;border-radius:50%;background:var(--teal);flex:none}
+.s1{left:-20px;top:20%} .s2{right:-16px;bottom:16%}
+
+.approach{background:var(--band);color:var(--on-band);border-radius:32px;padding:56px clamp(20px,5vw,60px);margin-bottom:28px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center}
+.approach .eyebrow{color:var(--plum)}
+.approach h2{font-size:clamp(28px,3.4vw,38px);font-weight:900;margin:8px 0 16px}
+.approach p{margin:0 0 14px;opacity:.85}
+.quote{margin:22px 0 0;padding-left:18px;border-left:3px solid var(--teal);border-radius:0}
+.quote p{font-family:var(--display);font-weight:800;font-size:21px;opacity:1;margin:0 0 4px}
+.quote cite{font-style:normal;font-size:14px;opacity:.75}
+.loop{width:100%;max-width:380px;justify-self:center;color:var(--plum)}
+.loop text{font-family:var(--display);font-weight:800}
+
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:88px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.pillar .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;background:var(--teal-soft);color:var(--teal)}
+.pillar h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.pillar p{margin:0;font-size:15px;color:var(--muted)}
+
+section{padding-bottom:88px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:900;margin-top:4px}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:58ch}
+
+.translate{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:36px clamp(20px,4vw,44px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:center}
+.translate h2{font-size:clamp(24px,2.8vw,32px);font-weight:900;margin:6px 0 10px}
+.translate p{color:var(--muted);margin:0}
+.feat{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:12px}
+.feat li{position:relative;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.55}
+.feat li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--rose)}
+.feat b{color:var(--ink)}
+.dash{margin:0;min-width:0}
+.dash img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:0 12px 32px -18px rgba(58,38,34,.35)}
+.dash figcaption{margin-top:10px;font-size:13px;color:var(--muted);text-align:center}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{font:800 14px var(--display);border:1.5px solid var(--line);background:var(--bg);color:var(--muted);padding:8px 16px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:var(--surface)}
+.bubble{background:var(--bg);border-radius:20px;padding:22px 24px}
+.tr-out{font-family:var(--display);font-weight:800;font-size:20px;line-height:1.45;margin:0;min-height:4.4em}
+.tr-who{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+
+.journey{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.stop{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;min-width:0}
+.stop .yr{font-family:var(--display);font-weight:800;font-size:13px;color:var(--teal)}
+.stop h3{font-size:17px;font-weight:800;margin:8px 0 6px}
+.stop p{font-size:14px;color:var(--muted);margin:0}
+.stop.now{background:var(--teal-soft);border-color:transparent}
+
+.work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:14px 14px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.case .thumb{aspect-ratio:4/3;max-width:100%;border-radius:16px;display:grid;place-items:center;margin-bottom:8px;background:var(--teal-soft)}
+.case:nth-child(1) .thumb{background:var(--band)}
+.case:nth-child(2) .thumb{background:var(--sun-soft)}
+.stop.now{background:var(--rose-soft)}
+.case > *:not(.thumb){margin-inline:8px}
+.case h3{font-size:21px;font-weight:800}
+.case p{margin:0;color:var(--muted);font-size:15.5px}
+.loopTag{font-size:12px;font-weight:800;font-family:var(--display);color:var(--teal);letter-spacing:.03em;text-transform:uppercase}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg);color:var(--muted)}
+.case .more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:800;font-size:15px;color:var(--teal);text-decoration:none}
+
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;min-width:0}
+.sk h3{font-size:17px;font-weight:800;margin-bottom:12px}
+.sk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.sk li{font-size:13.5px;font-weight:700;padding:4px 11px;border-radius:999px;background:var(--bg);color:var(--ink)}
+
+.community{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.cs{grid-column:span 2;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.cs.feature{grid-column:span 3}
+.cs .photo{aspect-ratio:4/3;max-width:100%;overflow:hidden;background:var(--line)}
+.cs.feature .photo{aspect-ratio:16/9}
+.cs .cap{padding:18px 20px 20px}
+.cs .cap span{display:block;margin-top:4px;line-height:1.5}
+.cs .cap b{display:block;font-family:var(--display);font-weight:800;font-size:16.5px;line-height:1.3}
+.cs .cap span{font-size:14px;color:var(--muted)}
+
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+.list{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;padding:14px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);align-items:baseline}
+.row .yr{font-family:var(--display);font-weight:800;color:var(--teal)}
+.row b{font-weight:700;line-height:1.4}
+.row span.sub{display:block;font-size:14px;color:var(--muted)}
+
+footer{background:var(--peach);color:var(--ink);border-radius:32px 32px 0 0;padding:56px clamp(20px,5vw,60px) 64px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:end}
+footer .eyebrow{color:var(--rose)}
+footer h2{font-size:clamp(28px,3.6vw,42px);font-weight:900;margin-top:8px}
+.contact{display:grid;gap:12px;font-size:16px}
+.contact div{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline}
+.contact .k{font-family:var(--display);font-weight:800;font-size:13px;opacity:.7;width:80px}
+footer .ph{background:transparent;color:inherit;border-color:currentColor}
+
+@media (max-width:900px){
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .work{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:860px){
+  .hero,.translate,.approach,footer,.two{grid-template-columns:minmax(0,1fr)}
+  .pillars{grid-template-columns:minmax(0,1fr)}
+  .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stop.now{grid-column:1 / -1}
+  .community{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cs,.cs.feature{grid-column:span 1}
+  .cs:last-child{grid-column:1 / -1}
+  .cs:last-child .photo{aspect-ratio:16/9}
+  .s1{left:-6px} .s2{right:-6px}
+}
+@media (max-width:520px){
+  .journey,.skills,.community{grid-template-columns:minmax(0,1fr)}
+  .cs,.cs.feature,.cs:last-child{grid-column:auto}
+}
+</style>
+
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="name" href="#top">Inara Isani</a>
+  <ul>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <span class="eyebrow">MBA/MPH Candidate · Johns Hopkins University</span>
+    <h1>Turning evidence into innovation, and using <span>AI and innovation to build new evidence.</span></h1>
+    <p class="lede">I am a dentist by training and a dual-degree MBA/MPH candidate at the Johns Hopkins Carey Business School and Bloomberg School of Public Health. My work sits where public health, technology, and business strategy meet.</p>
+    <div class="focus" aria-label="Areas of interest"><span>Digital health</span><span>Artificial intelligence</span><span>Innovation</span></div>
+    <div class="cta">
+      <a class="btn" href="#work">View my work</a>
+      <a class="btn ghost" href="#contact">Contact me</a>
+    </div>
+  </div>
+  <div class="portrait">
+    <div class="arch"><img src="img/headshot.jpg" alt="Portrait of Inara Isani" width="900" height="1350"></div>
+    <div class="sticker s2"><i></i>MBA/MPH, Johns Hopkins</div>
+  </div>
+</header>
+
+<div class="approach" id="approach">
+  <div>
+    <span class="eyebrow">My approach</span>
+    <h2>A continuous cycle of evidence and innovation</h2>
+    <p>Much of what health research proves never reaches the patients and communities it could serve. I translate established evidence into scalable products, services, and strategies.</p>
+    <p>Each innovation, especially AI-enabled solutions, then becomes a source of new data. That data generates evidence that strengthens the next decision. Throughout the cycle, I weigh financial sustainability against the human values that health care depends on.</p>
+    <blockquote class="quote">
+      <p>"Business with humanity in mind."</p>
+      <cite>Johns Hopkins Carey Business School</cite>
+    </blockquote>
+  </div>
+  <svg class="loop" viewBox="0 0 400 400" role="img" aria-labelledby="loopT loopD">
+    <title id="loopT">The evidence and innovation cycle</title>
+    <desc id="loopD">Existing evidence is translated into innovation. AI and innovation generate new evidence, which informs the next cycle. Profitability and human values sit at the center.</desc>
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+    <path d="M128 92 A130 130 0 0 1 272 92" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" marker-end="url(#ar)" opacity=".8"/>
+    <path d="M336 214 A130 130 0 0 1 256 318" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" marker-end="url(#ar)" opacity=".8"/>
+    <path d="M144 318 A130 130 0 0 1 64 214" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" marker-end="url(#ar)" opacity=".8"/>
+    <circle cx="80" cy="150" r="60" fill="var(--teal-soft)"/>
+    <text x="80" y="146" text-anchor="middle" font-size="16" fill="var(--teal)">Existing</text>
+    <text x="80" y="166" text-anchor="middle" font-size="16" fill="var(--teal)">evidence</text>
+    <circle cx="320" cy="150" r="60" fill="var(--teal)"/>
+    <text x="320" y="146" text-anchor="middle" font-size="16" fill="var(--surface)">AI and</text>
+    <text x="320" y="166" text-anchor="middle" font-size="16" fill="var(--surface)">innovation</text>
+    <circle cx="200" cy="332" r="60" fill="var(--teal-soft)"/>
+    <text x="200" y="328" text-anchor="middle" font-size="16" fill="var(--teal)">New</text>
+    <text x="200" y="348" text-anchor="middle" font-size="16" fill="var(--teal)">evidence</text>
+    <circle cx="200" cy="200" r="54" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+    <text x="200" y="194" text-anchor="middle" font-size="13" fill="currentColor">Profitability +</text>
+    <text x="200" y="214" text-anchor="middle" font-size="13" fill="currentColor">human values</text>
+    <text x="200" y="62" text-anchor="middle" font-size="13" fill="currentColor" opacity=".75">translate</text>
+    <text x="350" y="292" text-anchor="middle" font-size="13" fill="currentColor" opacity=".75">measure</text>
+    <text x="52" y="292" text-anchor="middle" font-size="13" fill="currentColor" opacity=".75">inform</text>
+  </svg>
+</div>
+
+<div class="pillars">
+  <div class="pillar"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2.5zM8 7h6M8 11h4"/></svg></div><h3>Evidence-based</h3><p>Clinical training grounds my work in established research, so solutions start from what is proven to improve outcomes.</p></div>
+  <div class="pillar"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg></div><h3>Financially sustainable</h3><p>Health solutions need viable business models to scale. I design for revenue as well as impact, so that the impact lasts.</p></div>
+  <div class="pillar"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2 1-4 3-4s3 2 3 4"/></svg></div><h3>Equitable by design</h3><p>I apply a public health lens to reach underserved populations, including older adults who are often left out of digital health.</p></div>
+</div>
+
+<section>
+  <div class="translate">
+    <div>
+      <span class="eyebrow">AI → new evidence</span>
+      <h2>Speak Safe dashboard: turning silence into evidence</h2>
+      <p>An employer-facing dashboard I designed for Speak Safe. Anonymous AI check-ins are coded into themes, then shown only at group level, so leaders can see what gets in the way without seeing anyone's answers.</p>
+      <ul class="feat">
+        <li><b>Privacy threshold.</b> Groups below a minimum size are pooled, never dropped, so no one is identifiable or erased.</li>
+        <li><b>AI theme analysis.</b> Language analysis surfaces barriers such as fear of disclosure, stigma, and inflexible policy.</li>
+        <li><b>Policy simulator.</b> Estimates productive days recovered under a new policy, starting from published survey data.</li>
+      </ul>
+    </div>
+    <figure class="dash">
+      <img src="img/speak-safe-dashboard.jpg" alt="Speak Safe dashboard preview with synthetic data: 87 anonymous check-ins, barriers by theme, and groups large enough to report" loading="lazy">
+      <figcaption>Dashboard preview with synthetic demo data</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="sec-head"><div><span class="eyebrow">Career path</span><h2>From clinical practice to health innovation</h2></div></div>
+  <div class="journey">
+    <div class="stop"><span class="yr">2023 · Bengaluru</span><h3>Clinical training</h3><p>Bachelor of Dental Surgery. Ranked 2nd across 48+ colleges; gold medalist; three peer-reviewed publications.</p></div>
+    <div class="stop"><span class="yr">2024</span><h3>Medical affairs</h3><p>Medical content and medical science liaison work, translating clinical trial data for 200+ physicians.</p></div>
+    <div class="stop"><span class="yr">2025</span><h3>Digital health</h3><p>Designed an AI-enabled symptom-tracking tool for women's health at Cranberry.Fit, used by 500+ women.</p></div>
+    <div class="stop"><span class="yr">2026 · Baltimore</span><h3>Strategy and research</h3><p>MBA/MPH at Johns Hopkins, focused on health AI research and go-to-market strategy.</p></div>
+    <div class="stop now"><span class="yr">Next</span><h3>Health innovation</h3><p>Product and strategy roles in digital health, AI, and innovation.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="sec-head"><div><span class="eyebrow">Selected work</span><h2>Projects</h2></div></div>
+  <div class="work">
+    <article class="case">
+      <div class="thumb trustArt"><svg viewBox="0 0 320 240" role="img" aria-label="Illustration of a patient and an AI assistant exchanging messages, connected by a shield representing trust and privacy">
+        <circle cx="160" cy="120" r="92" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="3 6"/>
+        <circle cx="160" cy="120" r="62" fill="none" stroke="currentColor" stroke-opacity=".28" stroke-width="1.5" stroke-dasharray="3 6"/>
+        <g transform="translate(58 92)"><circle cx="20" cy="14" r="13" fill="var(--surface)" stroke="var(--rose)" stroke-width="2.5"/><path d="M-4 62c0-18 10-30 24-30s24 12 24 30" fill="var(--surface)" stroke="var(--rose)" stroke-width="2.5" stroke-linecap="round"/></g>
+        <g transform="translate(222 98)"><rect x="0" y="0" width="44" height="44" rx="14" fill="var(--surface)" stroke="var(--teal)" stroke-width="2.5"/><path d="M22 10l3.2 8.8L34 22l-8.8 3.2L22 34l-3.2-8.8L10 22l8.8-3.2z" fill="var(--teal)"/></g>
+        <g><rect x="98" y="54" width="70" height="26" rx="13" fill="var(--rose-soft)" stroke="var(--rose)" stroke-width="1.5"/><circle cx="118" cy="67" r="3" fill="var(--rose)"/><circle cx="133" cy="67" r="3" fill="var(--rose)"/><circle cx="148" cy="67" r="3" fill="var(--rose)"/></g>
+        <g><rect x="160" y="166" width="70" height="26" rx="13" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.5"/><rect x="172" y="176" width="46" height="6" rx="3" fill="var(--teal)" opacity=".7"/></g>
+        <path d="M160 96l24 9v17c0 15-10 26-24 32-14-6-24-17-24-32v-17z" fill="var(--surface)" stroke="var(--plum)" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M149 124l8 8 14-16" fill="none" stroke="var(--plum)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+      <span class="loopTag">AI → new evidence</span>
+      <h3>Trust in health AI</h3>
+      <p>Research at Johns Hopkins, with Google collaborators, on how patients build trust in AI tools used in sensitive health contexts.</p>
+      <div class="tags"><span class="tag">AI research</span><span class="tag">Trust and privacy</span><span class="tag">JHU PALS Lab</span></div>
+      <span class="more">Details to follow publication</span>
+    </article>
+    <article class="case">
+      <div class="thumb shot"><img src="img/familycare.jpg" alt="FamilyCare dashboard showing a weekly care overview, a matched companion, and caregiving gaps flagged by AI" loading="lazy"></div>
+      <span class="loopTag">Evidence → innovation</span>
+      <h3>FamilyCare</h3>
+      <p>A care-coordination platform that helps adult children support aging parents. I built the go-to-market strategy and an interactive demo with an AI assistant that flags caregiving gaps, like a missing ride to an appointment.</p>
+      <div class="tags"><span class="tag">Go-to-market</span><span class="tag">Healthy aging</span><span class="tag">Carey MBA</span></div>
+      <a class="more" href="https://inara-isani.github.io/familycare-demo/" target="_blank" rel="noopener">View live demo →</a>
+    </article>
+    <article class="case">
+      <div class="thumb slide"><img src="img/speak-safe.jpg" alt="Title slide: Making Menstrual Burden at Work Visible. Speak Safe, Count Everyone." loading="lazy"></div>
+      <span class="loopTag">AI → new evidence</span>
+      <h3>Speak Safe: making menstrual burden at work visible</h3>
+      <p>Most people hide menstrual symptoms at work, so the burden never reaches HR or public health data. Speak Safe uses anonymous AI check-ins to turn that silence into group-level evidence for workplace and health policy, without exposing any individual.</p>
+      <div class="tags"><span class="tag">Women's health</span><span class="tag">Gender equity</span><span class="tag">Privacy by design</span></div>
+      <span class="more">Co-founded with Ramya Shanta · Pilot planned at JHU</span>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head"><div><span class="eyebrow">Capabilities</span><h2>Skills</h2></div></div>
+  <div class="skills">
+    <div class="sk"><h3>Public health and research</h3><ul><li>Evidence synthesis</li><li>Clinical research</li><li>Study design</li><li>Literature review</li></ul></div>
+    <div class="sk"><h3>Digital health and AI</h3><ul><li>AI-enabled workflow design</li><li>Decision-support tools</li><li>Product thinking</li></ul></div>
+    <div class="sk"><h3>Business strategy</h3><ul><li>Go-to-market</li><li>Market research</li><li>Competitive analysis</li><li>Venture pitching</li><li>Program management</li></ul></div>
+    <div class="sk"><h3>Communication</h3><ul><li>Health communication</li><li>Medical writing</li><li>Social media strategy</li><li>Figma</li><li>Canva</li></ul></div>
+  </div>
+</section>
+
+<section id="community">
+  <div class="sec-head"><div><span class="eyebrow">Community engagement</span><h2>Community service</h2><p>Public health practice extends beyond the clinic. These are the communities I have served directly.</p></div></div>
+  <div class="community">
+    <div class="cs feature"><div class="photo"><img src="img/hpv-1.jpg" alt="Inara with fellow facilitators after a women's health session" loading="lazy" style="object-position:50% 55%"></div><div class="cap"><b>HPV and women's health education</b><span>Sessions on HPV vaccination and menstrual health for 100+ women with Cranberry.Fit</span></div></div>
+    <div class="cs feature"><div class="photo"><img src="img/upay-1.jpg" alt="Volunteers and children gathered around a globe during a UPAY learning session" loading="lazy" style="object-position:50% 40%"></div><div class="cap"><b>UPAY Foundation</b><span>Designed teacher-training programs and led learning sessions with children, 2025 to 2026</span></div></div>
+    <div class="cs"><div class="photo"><img src="img/akhb-dental.jpg" alt="Inara with a young participant holding a thank-you card after a dental hygiene session" loading="lazy" style="object-position:50% 25%"></div><div class="cap"><b>Aga Khan Health Board</b><span>Dental hygiene sessions for children, 2024 to present</span></div></div>
+    <div class="cs"><div class="photo"><img src="img/ismaili-civic.jpg" alt="Ismaili CIVIC volunteers in front of the event banner in Bengaluru" loading="lazy"></div><div class="cap"><b>Ismaili CIVIC</b><span>Climate change and sustainability awareness session, Bengaluru</span></div></div>
+    <div class="cs"><div class="photo"><img src="img/source-day.jpg" alt="Johns Hopkins MPH students at the Amazing Port Street garden in Baltimore" loading="lazy" style="object-position:70% 50%"></div><div class="cap"><b>SOURCE MPH Day of Service</b><span>Community service with Johns Hopkins MPH peers, Baltimore</span></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <div>
+      <div class="sec-head"><div><span class="eyebrow">Leadership</span><h2>Campus roles</h2></div></div>
+      <div class="list">
+        <div class="row"><span class="yr">2026</span><div><b>Director of Marketing and Social Media</b><span class="sub">Digital Health Society</span></div></div>
+        <div class="row"><span class="yr">2026</span><div><b>AVP Events, Baltimore Campus</b><span class="sub">Carey AI Club</span></div></div>
+        <div class="row"><span class="yr">2026</span><div><b>Director of Communication and Outreach</b><span class="sub">JHU Indian Student Association</span></div></div>
+        <div class="row"><span class="yr">2026</span><div><b>AKFISP Scholar and Forté Fellow</b><span class="sub">Fellowships</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-head"><div><span class="eyebrow">Research</span><h2>Publications</h2></div></div>
+      <div class="list">
+        <div class="row"><span class="yr">2025</span><div><b>International Journal of Environmental Sciences</b><span class="sub">Peer-reviewed</span></div></div>
+        <div class="row"><span class="yr">2024</span><div><b>African Journal of Biomedical Research</b><span class="sub">Peer-reviewed</span></div></div>
+        <div class="row"><span class="yr">2023</span><div><b>Journal of Oral and Maxillofacial Pathology</b><span class="sub">Peer-reviewed</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer id="contact" class="wrap">
+  <div>
+    <span class="eyebrow">Contact</span>
+    <h2>Interested in digital health, AI, or health innovation? Let's connect.</h2>
+  </div>
+  <div class="contact">
+    <div><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/inara-isani">linkedin.com/in/inara-isani</a></div>
+    <div><span class="k">Email</span><span>iisani1@jh.edu</span></div>
+    <div><span class="k">Location</span><span>Baltimore, MD</span></div>
+    <div><span class="k">Resume</span><a href="docs/Inara_Isani_Resume.pdf" target="_blank" rel="noopener">Download PDF →</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>
